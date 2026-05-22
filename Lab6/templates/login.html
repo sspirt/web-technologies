@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <div class="card">
+    <div class="card-title" style="text-align:center;">🔐 Вход в систему</div>
+    <form method="POST" action="/login" novalidate>
+      <div class="form-group">
+        <label for="u">Логин</label>
+        <input class="input" type="text" name="username" id="u"
+               placeholder="Введите логин" required autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="p">Пароль</label>
+        <input class="input" type="password" name="password" id="p"
+               placeholder="Введите пароль" required autocomplete="current-password">
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" name="remember" id="rem">
+        <label for="rem">Запомнить меня на 24 часа</label>
+      </div>
+      <button type="submit" class="btn btn-blue" style="width:100%;padding:.6rem;">Войти</button>
+    </form>
+    <p class="auth-footer">Нет аккаунта? <a href="/register">Зарегистрироваться</a></p>
+  </div>
+</div>
+{% endblock %}
